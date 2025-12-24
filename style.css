@@ -1,0 +1,28 @@
+body{
+    font-family: 'Arial', sans-serif;
+    background: #1a1a2e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+header {
+    text-align: center;
+    padding: 2rem;
+    background: #162447;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+header h1{
+    font-size: 2.5rem;
+    transition: transform 0.3s;
+}
+header h1:hover{
+    transform: scale(1.1);
+    color: #fca311;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
