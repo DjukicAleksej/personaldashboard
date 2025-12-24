@@ -26,3 +26,8 @@ header h1:hover{
     gap: 1rem;
     padding: 2rem;
 }
+.card {
+    background: #1f4067;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
