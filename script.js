@@ -34,7 +34,8 @@ const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 
 function saveTodos(){
-    localStorage.setItem('todos', JSON.stringify([...todoList.querySelectorAll('li')].map(li => li.textContent)));
+   const todos = [];
+   
 }
 
 
