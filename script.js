@@ -59,3 +59,15 @@ function addTodo(text) {
     saveTodos();
 }
 
+todoInput.addEventListener('keypress', e => {
+    if(e.key === 'Enter' && todoInput.value.trim() !== ''){
+        addTodo(todoInput.value.trim());
+        todoInput.value = '';
+    }
+});
+loadTodos();
+
+
+
+
+
