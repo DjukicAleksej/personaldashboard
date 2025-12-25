@@ -50,4 +50,12 @@ function addTodo(text) {
         li.classList.toggle('done');
         saveTodos();
     });
+    li.addEventListener('dblclick',() => {
+        li.remove();
+        saveTodos();
+    });
+
+    todoList.appendChild(li);
+    saveTodos();
 }
+
