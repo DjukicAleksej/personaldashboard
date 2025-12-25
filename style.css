@@ -55,3 +55,23 @@ button {
 button:hover {
     background: #ff6b6b;
 }
+
+footer{
+    text-align: center;
+    padding: 1rem;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+
+.todo-input-wrapped {
+    margin-bottom: 1rem;
+}
+
+#todo-input {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
