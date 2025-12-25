@@ -37,3 +37,17 @@ function saveTodos(){
     localStorage.setItem('todos', JSON.stringify([...todoList.querySelectorAll('li')].map(li => li.textContent)));
 }
 
+
+function loadTodos() {
+    const saved = JSON.parse(localStorage.getItem('todos') || '[]');
+    saved.forEach(todo => addTodo(todo));
+}
+
+function addTodo(text) {
+    const li = document.createElement('li');
+    li.textContent = text;
+    li.addEventListener('click', () => {
+        li.classList.toggle('done');
+        saveTodos();
+    });
+}
