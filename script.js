@@ -50,12 +50,23 @@ function saveTodos(){
 
 function loadTodos() {
     const saved = JSON.parse(localStorage.getItem('todos') || '[]');
-    saved.forEach(todo => addTodo(todo));
+    saved.forEach(todo => addTodo(todo.text,todo.done));
 }
 
-function addTodo(text) {
+
+
+function addTodo(text, done = false) {
     const li = document.createElement('li');
-    li.textContent = text;
+    li.className = "todo-item";
+    if(done) li.classList.add("done");
+
+    const span = document.createElement('span');
+    span.textContent = text;
+    span.onclick = () => {
+        li.classList.toggle('done');
+        saveTodos();
+    }
+    
     li.addEventListener('click', () => {
         li.classList.toggle('done');
         saveTodos();
