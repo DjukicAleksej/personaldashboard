@@ -52,4 +52,6 @@ button {
 }
 
 
-
+button:hover {
+    background: #ff6b6b;
+}
