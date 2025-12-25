@@ -75,3 +75,9 @@ footer{
     border: none;
     outline: none;
 }
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
