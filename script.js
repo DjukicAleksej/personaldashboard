@@ -66,7 +66,7 @@ function addTodo(text, done = false) {
         li.classList.toggle('done');
         saveTodos();
     }
-    
+
     li.addEventListener('click', () => {
         li.classList.toggle('done');
         saveTodos();
@@ -75,6 +75,19 @@ function addTodo(text, done = false) {
         li.remove();
         saveTodos();
     });
+    const actions = document.createElement('div');
+    actions.className = 'todo-actions';
+
+    const editBtn = document.createElement('button');
+    editBtn.textContent='✏️';
+    editBtn.onclick = () => {
+        const newText = prompt('Edit task:',span.textContent);
+        if(newText) {
+            span.textContent = newText;
+            saveTodos();
+        }
+    }
+    
 
     todoList.appendChild(li);
     saveTodos();
