@@ -87,8 +87,16 @@ function addTodo(text, done = false) {
             saveTodos();
         }
     }
-    
 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent='🗑';
+    deleteBtn.onclick = () => {
+        li.remove();
+        saveTodos();
+    }
+
+    actions.append(editBtn, deleteBtn);
+    li.append(span, actions);
     todoList.appendChild(li);
     saveTodos();
 }
