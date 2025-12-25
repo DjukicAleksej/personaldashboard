@@ -21,3 +21,9 @@ const nextQuoteBtn = document.getElementById('next-quote');
 function showQuote(){
     quoteEl.textContent = quotes[quoteIndex];
 }
+
+nextQuoteBtn.addEventListener('click', () => {
+    quoteIndex = (quoteIndex + 1) % quotes.length;
+    showQuote();
+});
+showQuote();
