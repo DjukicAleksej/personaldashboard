@@ -35,8 +35,17 @@ const todoList = document.getElementById('todo-list');
 
 function saveTodos(){
    const todos = [];
-   
+   document.querySelectorAll ('.todo-item').forEach(item => {
+    todos.push({
+        text: item.querySelector('span').textContent,
+        done: item.classList.contains('done')
+    });
+  });
+
+  localStorage.setItem('todos' , JSON.stringify(todos));
 }
+
+
 
 
 function loadTodos() {
