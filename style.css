@@ -30,4 +30,19 @@ header h1:hover{
     background: #1f4067;
     padding: 1.5rem;
     border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s, background 0.3s;
 }
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #fca311;
+    color: #162447;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+}
+
