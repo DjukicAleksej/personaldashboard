@@ -14,3 +14,10 @@ const quotes =[
     "Dream big and dare to fail.",
     "Code is like humor. When you have to explain it, it's bad."
 ];
+
+let quoteIndex = 0;
+const quoteEl = document.getElementById('quote');
+const nextQuoteBtn = document.getElementById('next-quote');
+function showQuote(){
+    quoteEl.textContent = quotes[quoteIndex];
+}
