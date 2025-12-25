@@ -104,6 +104,22 @@ footer{
     font-size: 0.8rem;
 }
 
+.todo-hint {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 0.5 rem;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 
 
