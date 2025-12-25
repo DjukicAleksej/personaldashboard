@@ -92,5 +92,18 @@ footer{
     animation: slideIn 0.3s ease;
 }
 
+.todo-item.done span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.todo-actions button {
+    margin-left: 5px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+
 
 
