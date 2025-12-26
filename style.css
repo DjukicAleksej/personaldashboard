@@ -48,6 +48,11 @@ header h1{
 
 #hero {
     min-height: 100vh;
+    padding: 80px 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
 }
 .dashboard {
     display: grid;
