@@ -228,6 +228,19 @@ header h1{
     display: flex;
     align-items: center;
 }
+#stats {
+    padding: 80px 8vw;
+    background: linear-gradient(to bottom,#020617ee,#020617);
+}
+#stats h2{
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+.stats-cards{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
 
 footer{
     margin-top: auto;
