@@ -267,6 +267,19 @@ header h1{
     font-size: 1rem;
     opacity: 0.7;
 }
+#tips {
+    padding: 80px 8vw;
+}
+#tips h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+#tips ul{
+    list-style: disc;
+    margin-left: 20px;
+    color: #aaa;
+}
 footer{
     margin-top: auto;
     padding: 40px 8vw;
