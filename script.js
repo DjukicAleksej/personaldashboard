@@ -67,7 +67,23 @@ function startTimer(){
     timer = setInterval(updateTimer,1000);
 }
 
+function updateTimer(){
+    const timerElement = document.getElementById('timer');
+    timerElement.textContent =
+    formatTime(minutes,seconds);
 
+    if(minutes===0 && seconds===0){
+        clearInterval(timer);
+        alert('Time is up! Take a break.');
+    } else if (!isPaused){
+        if(seconds>0){
+            seconds--;
+        }else {
+            seconds=59;
+            minutes--;
+        }
+    }
+}
 
 
 
