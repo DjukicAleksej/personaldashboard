@@ -129,6 +129,10 @@ function updateStats() {
     const todos = document.querySelectorAll('.todo-item');
     const doneCount = document.querySelectorAll('.todo-item.done').length;
     const remainingCount = todos.length - doneCount;
+
+    document.getElementById('done-count').textContent = doneCount;
+    document.getElementById('remaining-count').textContent = remainingCount;
+    
 }
 
 
