@@ -84,6 +84,20 @@ header h1{
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(199, 210, 254, 0.35);
 }
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.6;
+    cursor: pointer;
+    animation: bounce 1.8s infinite;
+    transition: opacity 0.25s ease,transform 0.25s ease;
+}
+.scroll-down:hover {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.15);
+}
 
 #todos {
     min-height: 100vh;
