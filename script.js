@@ -12,7 +12,7 @@ const quotes =[
     "Stay hungry, stay foolish.",
     "Do something today that your future self will thank you for.",
     "Dream big and dare to fail.",
-    "Code is like humor. When you have to explain it, it's bad."
+    "Code is like humor. When you have to explain it, it's bad.",
 ];
 
 let quoteIndex = 0;
