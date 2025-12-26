@@ -35,8 +35,9 @@ document.getElementById('scroll-to-todos')
     .scrollIntoView({behavior: 'smooth'});
 });
 window.addEventListener('scroll', () => {
-    
-})
+    const arrow = document.getElementById('scroll-to-todos');
+    arrow.style.opacity = window.scrollY > 100 ? '0' : '0.67';
+});
 const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 
