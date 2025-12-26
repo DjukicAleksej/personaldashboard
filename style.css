@@ -287,7 +287,7 @@ header h1{
 .timer-circle {
     border-radius: 50%;
     width: 200px;
-    height: 200p;
+    height: 200px;
     margin: 20px auto;
     display: flex;
     align-items: center;
@@ -296,6 +296,12 @@ header h1{
     color: crimson;
     border: 8px solid #3498db;
 }
+.control-buttons {
+    margin-top: 75px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 #tips {
     padding: 80px 8vw;
 }
