@@ -241,6 +241,11 @@ header h1{
     gap: 24px;
     flex-wrap: wrap;
 }
+.stat-card {
+    flex: 1 1 180px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px) saturate(180%);
+}
 
 footer{
     margin-top: auto;
