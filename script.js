@@ -29,7 +29,14 @@ nextQuoteBtn.addEventListener('click', () => {
 showQuote();
 
 //todo
-
+document.getElementById('scroll-to-todos')
+.addEventListener('click', () => {
+    document.getElementById('todos')
+    .scrollIntoView({behavior: 'smooth'});
+});
+window.addEventListener('scroll', () => {
+    
+})
 const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 
