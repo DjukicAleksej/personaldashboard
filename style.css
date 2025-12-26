@@ -272,14 +272,9 @@ header h1{
 }
 #tips h2 {
     font-size: 1.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-#tips ul{
-    list-style: disc;
-    margin-left: 20px;
-    color: #aaa;
-}
 footer{
     margin-top: auto;
     padding: 40px 8vw;
