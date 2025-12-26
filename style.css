@@ -284,6 +284,18 @@ header h1{
     height: 400px;
     text-align: center;
 }
+.timer-circle {
+    border-radius: 50%;
+    width: 200px;
+    height: 200p;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: crimson;
+    border: 8px solid #3498db;
+}
 #tips {
     padding: 80px 8vw;
 }
