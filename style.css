@@ -47,6 +47,7 @@ header h1{
 }
 
 #hero {
+    position: relative;
     min-height: 80vh;
     padding: 80px 8vw;
     display: flex;
@@ -97,6 +98,15 @@ header h1{
 .scroll-down:hover {
     opacity: 1;
     transform: translateX(-50%) scale(1.15);
+}
+
+@keyframes bounce {
+    0%,100%{
+        transform: translate(-50%,0);
+    }
+    50% {
+        transform: translate(-50%,8px);
+    }
 }
 
 #todos {
