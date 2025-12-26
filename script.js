@@ -125,7 +125,11 @@ todoInput.addEventListener('keypress', e => {
 });
 loadTodos();
 
-
+function updateStats() {
+    const todos = document.querySelectorAll('.todo-item');
+    const doneCount = document.querySelectorAll('.todo-item.done').length;
+    const remainingCount = todos.length - doneCount;
+}
 
 
 
