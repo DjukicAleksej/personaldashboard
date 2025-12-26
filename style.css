@@ -11,27 +11,34 @@ html {
 
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    
-    background: #1a1a2e;
-    color: #fff;
-    margin: 0;
-    padding: 0;
+
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: #e5e7eb;
+    overflow-x: hidden;
 }
 header {
-    text-align: center;
-    padding: 2rem;
-    background: #162447;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding: 40px 8vw;
+    animation: fadeDown 0.8s ease forwards;
 }
 header h1{
     font-size: 2.5rem;
-    transition: transform 0.3s;
+    font-weight: 900;
+    letter-spacing: 1px;
+    opacity: 0.9;
 }
-header h1:hover{
-    transform: scale(1.1);
-    color: #fca311;
+.ambient-time {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    text-align: right;
+    opacity: 0.22;
+    pointer-events: none;
+    animation: timeFloat 4s ease-in-out infinite alternate;
 }
 
+.ambient-time h2 {
+    display: none; 
+}
 .dashboard {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
