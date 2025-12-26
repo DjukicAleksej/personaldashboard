@@ -274,7 +274,19 @@ header h1{
     font-size: 1.8rem;
     margin-bottom: 30px;
 }
-
+.tips-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+.tip-card{
+    flex: 1 1 220px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+}
 footer{
     margin-top: auto;
     padding: 40px 8vw;
