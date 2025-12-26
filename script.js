@@ -132,7 +132,12 @@ function updateStats() {
 
     document.getElementById('done-count').textContent = doneCount;
     document.getElementById('remaining-count').textContent = remainingCount;
-    
+
+    const streak = parseInt(localStorage.getItem('streak') || '0');
+    if(doneCount === todos.length && todos.length > 0){
+        localStorage.setItem('streak',streak+1);
+    }
+    document.getElementById('streak-count').textContent = localStorage.getItem('streak') || '0';
 }
 
 
