@@ -173,6 +173,15 @@ footer{
 }
 
 
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px);}
+    to{opacity: 1;transform: translateY(0);}
+}
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
 @keyframes slideIn {
     from {
         transform: translateY(10px);
