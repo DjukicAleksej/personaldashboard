@@ -141,5 +141,12 @@ function updateStats() {
 }
 
 
+function saveTodosDebounced(){
+    saveTodos();
+    updateStats();
+}
+
+updateStats();
+
 
 
