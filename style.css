@@ -301,7 +301,14 @@ header h1{
     display: flex;
     justify-content: space-evenly;
 }
-
+.control-buttons button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 #tips {
     padding: 80px 8vw;
 }
