@@ -62,40 +62,48 @@ function addTodo(text, done = false) {
 
     const span = document.createElement('span');
     span.textContent = text;
-    span.onclick = () => {
-        li.classList.toggle('done');
-        saveTodos();
-    }
 
     li.addEventListener('click', () => {
         li.classList.toggle('done');
         saveTodos();
     });
-    li.addEventListener('dblclick',() => {
-        li.remove();
-        saveTodos();
-    });
+   
     const actions = document.createElement('div');
     actions.className = 'todo-actions';
+    const doneBtn = document.createElement('button');
+    doneBtn.classList.add('done-btn');
+    doneBtn.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+viewBox="0 0 16 16">
+  <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+</svg>
+    `;
+    doneBtn.onclick = (e) => {
+        e.stopPropagation();
+        li.classList.toggle('done');
+        saveTodosDebounced();
+    }
 
     const editBtn = document.createElement('button');
     editBtn.textContent='✏️';
-    editBtn.onclick = () => {
+    editBtn.onclick = (e) => {
+        e.stopPropagation();
         const newText = prompt('Edit task:',span.textContent);
         if(newText) {
             span.textContent = newText;
-            saveTodos();
+            saveTodosDebounced();
         }
     }
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent='🗑';
-    deleteBtn.onclick = () => {
+    deleteBtn.onclick = (e) => {
+        e.stopPropagation();
         li.remove();
-        saveTodos();
+        saveTodosDebounced();
     }
 
-    actions.append(editBtn, deleteBtn);
+    actions.append( doneBtn, editBtn, deleteBtn);
     li.append(span, actions);
     todoList.appendChild(li);
     saveTodos();
@@ -109,22 +117,6 @@ todoInput.addEventListener('keypress', e => {
 });
 loadTodos();
 
-// -- COUNDOWN CARD ---
-const countdownEl = document.getElementById('Countdown');
-const targetDate = new Date("2026-01-01T00:00:00");
-
-function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
-    const days = Math.floor(diff / (1000*60 * 60 * 24));
-    const hours = Math.floor((diff/ (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff/ (1000*60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-}
-setInterval(updateCountdown,1000);
-updateCountdown();
 
 
 
