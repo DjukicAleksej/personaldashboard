@@ -57,6 +57,17 @@ function saveTodos(){
   localStorage.setItem('todos' , JSON.stringify(todos));
 }
 
+let timer;
+let minutes =15;
+let seconds=0;
+let isPaused = false;
+let enteredTime = null;
+
+function startTimer(){
+    timer = setInterval(updateTimer,1000);
+}
+
+
 
 
 
