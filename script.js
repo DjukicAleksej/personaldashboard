@@ -1,8 +1,12 @@
 //time
 function updateTime(){
     const timeEl = document.getElementById('time');
+    const dateEl = document.getElementById('date');
     const now = new Date();
     timeEl.textContent = now.toLocaleTimeString();
+
+    const options = {month: 'short',day:'numeric'};
+    dateEl.textContent = now.toLocaleDateString('en-Us',options);
 }
 
 setInterval(updateTime,1000);
