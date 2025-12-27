@@ -157,30 +157,45 @@ header h1{
 }
 
 #todos {
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 100px ;
+    align-items: center;
+    padding: 80px 24px ;
   
 }
 .todo-glass {
-    width: 420px;
-    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    padding: 36px;
 
-    border-radius: 20px;
+    border-radius: 24px;
 
-    background: rgba(255,255,255,255,0.15);
+    background: rgba(255,255,255,0.15);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255,255,255,0.25);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 
     text-align: center;
 }
+.todo-glass::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.25)
+        rgba(255,255,255,0.05)
+    );
+    opacity: 0.4;
+    pointer-events: none;
+}
 #todos h2 {
-    font-size: 2.3rem;
+    font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     animation: fadeUp 0.8s ease forwards;
 }
 
@@ -192,6 +207,7 @@ header h1{
     width: 100%;
     max-width: 500px;
     padding: 14px 18px;
+    margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 12px;
     border: none;
