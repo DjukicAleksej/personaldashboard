@@ -153,6 +153,7 @@ function getToday(){
 }
 let streak = parseInt(localStorage.getItem('streak') || 0);
 let lastStreakDate = localStorage.getItem('lastStreakDate');
+
 function tryIncreaseStreak(){
     const today = getToday();
     if(lastStreakDate === today){
@@ -164,6 +165,15 @@ function tryIncreaseStreak(){
     localStorage.setItem('lastStreakDate', lastStreakDate);
 
     updateStreakUI();
+}
+
+function checkStreakValidity(){
+    if(!lastStreakDate) return;
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate()-1);
+    const y = yesterday.toISOString().split('T')[0];
+
+    
 }
 
 function addTodo(text, done = false) {
@@ -190,8 +200,13 @@ viewBox="0 0 16 16">
 </svg>
     `;
     doneBtn.onclick = (e) => {
+        const wasDone = li.classList.contains('done');
         e.stopPropagation();
         li.classList.toggle('done');
+
+        if(!wasDone && li.classList.contains('done')){
+            tryIncreaseStreak();
+        }
         saveTodosDebounced();
     }
 
