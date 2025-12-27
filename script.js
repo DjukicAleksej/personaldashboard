@@ -173,8 +173,12 @@ function checkStreakValidity(){
     yesterday.setDate(yesterday.getDate()-1);
     const y = yesterday.toISOString().split('T')[0];
 
-    
+    if(lastStreakDate !== getToday() && lastStreakDate !== y){
+        streak = 0;
+        localStorage.setItem('streak',0);
+    }
 }
+checkStreakValidity();
 
 function addTodo(text, done = false) {
     const li = document.createElement('li');
