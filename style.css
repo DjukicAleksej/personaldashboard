@@ -155,7 +155,38 @@ header h1{
         transform: translate(-50%,8px);
     }
 }
-
+#daily-goal {
+    max-width: 480px;
+    margin: 3rem auto;
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+#daily-goal h2{
+    margin-bottom: 1rem;
+}
+.goal-input {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.goal-input input {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.goal-input button {
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+#goalStatus {
+    margin-top: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
 #todos {
     min-height: 100vh;
     display: flex;
