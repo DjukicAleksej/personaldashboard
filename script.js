@@ -86,8 +86,7 @@ function updateTimer(){
 }
 
 function formatTime(minutes,seconds){
-    return
-    `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+    return `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
 }
 function togglePauseResume () {
     const pauseResumeButton =
@@ -120,8 +119,23 @@ function chooseTime(){
         enteredTime = parseInt(newTime);
         minutes = enteredTime;
         seconds = 0;
+        isPaused = false;
+        const timerElement =
+        document.getElementById('timer');
+        timerElement.textContent =
+        formatTime(minutes,seconds);
+        clearInterval(timer);
+        const pauseResumeButton =
+        document.querySelector('.control-buttons button');
+        pauseResumeButton.textContent = 'Pause';
+        startTimer();
+    }else {
+        alert('Invalid input. Please enter'+
+            ' a valid number greater than 0.'
+        )
     }
 }
+startTimer();
 
 function loadTodos() {
     const saved = JSON.parse(localStorage.getItem('todos') || '[]');
