@@ -151,7 +151,20 @@ function getToday(){
     const d = new Date();
     return d.toISOString().split('T')[0]; //yyyy-mm-dd
 }
+let streak = parseInt(localStorage.getItem('streak') || 0);
+let lastStreakDate = localStorage.getItem('lastStreakDate');
+function tryIncreaseStreak(){
+    const today = getToday();
+    if(lastStreakDate === today){
+        return;
+    }
+    streak++;
+    lastStreakDate = today;
+    localStorage.setItem('streak',streak);
+    localStorage.setItem('lastStreakDate', lastStreakDate);
 
+    updateStreakUI();
+}
 
 function addTodo(text, done = false) {
     const li = document.createElement('li');
