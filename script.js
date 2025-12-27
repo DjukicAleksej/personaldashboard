@@ -147,6 +147,10 @@ function loadTodos() {
     saved.forEach(todo => addTodo(todo.text,todo.done));
 }
 
+function getToday(){
+    const d = new Date();
+    return d.toISOString().split('T')[0]; //yyyy-mm-dd
+}
 
 
 function addTodo(text, done = false) {
