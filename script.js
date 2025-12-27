@@ -64,6 +64,7 @@ let isPaused = false;
 let enteredTime = null;
 
 function startTimer(){
+    clearInterval(timer);
     timer = setInterval(updateTimer,1000);
 }
 
@@ -135,6 +136,10 @@ function chooseTime(){
         )
     }
 }
+document.getElementById('pause-btn').addEventListener('click', togglePauseResume);
+document.getElementById('restart-btn').addEventListener('click', restartTimer);
+document.getElementById('choose-btn').addEventListener('click', chooseTime);
+
 startTimer();
 
 function loadTodos() {
