@@ -18,6 +18,9 @@ const quotes =[
     "Dream big and dare to fail.",
     "Code is like humor. When you have to explain it, it's bad.",
 ];
+function todayKey() {
+    return new Date().toISOString().split("T")[0];
+}
 
 let quoteIndex = 0;
 const quoteEl = document.getElementById('quote');
@@ -31,6 +34,9 @@ nextQuoteBtn.addEventListener('click', () => {
     showQuote();
 });
 showQuote();
+const goalInput = document.getElementById("goalInput");
+const goalStatus = document.getElementById("goalStatus");
+const saveGoalBtn = document.getElementById("saveGoalBtn");
 
 //todo
 document.getElementById('scroll-to-todos')
