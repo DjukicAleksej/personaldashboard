@@ -37,7 +37,27 @@ showQuote();
 const goalInput = document.getElementById("goalInput");
 const goalStatus = document.getElementById("goalStatus");
 const saveGoalBtn = document.getElementById("saveGoalBtn");
-
+function loadDailyGoal() {
+    const data = JSON.parse(localStorage.getItem("daily-goal"));
+    if(!data || data.date !== todayKey()){
+        localStorage.setItem(
+            "dailyGoal",
+            JSON.stringify({
+                date: todayKey(),
+                text: "",
+                completed: false  
+            })
+        );
+        return;
+    }
+    goalInput.value = data.text;
+    updateGoalStatus(data.completed ? "completed" : "pending");
+}
+saveGoalBtn.addEventListener("click", () => {
+    const data = JSON.parse(localStorage.getItem("dailyGoal"));
+    data.text = goalInput.value.trim();
+    localStorage.setItem("dailyGoal", JSON.stringify(data));
+});
 //todo
 document.getElementById('scroll-to-todos')
 .addEventListener('click', () => {
