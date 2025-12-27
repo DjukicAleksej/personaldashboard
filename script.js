@@ -114,6 +114,15 @@ function restartTimer(){
     startTimer();
 }
 
+function chooseTime(){
+    const newTime = prompt('Enter new time in minutes:');
+    if(!isNaN(newTime) && newTime > 0){
+        enteredTime = parseInt(newTime);
+        minutes = enteredTime;
+        seconds = 0;
+    }
+}
+
 function loadTodos() {
     const saved = JSON.parse(localStorage.getItem('todos') || '[]');
     saved.forEach(todo => addTodo(todo.text,todo.done));
