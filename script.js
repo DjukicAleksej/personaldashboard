@@ -22,6 +22,26 @@ function todayKey() {
     return new Date().toISOString().split("T")[0];
 }
 
+function getCompletedTodosToday() {
+    const today = getToday();
+    const todos = document.querySelectorAll('.todo-item.done');
+    let count = 0;
+    todos.forEach(todo => {
+        if(todo.dataset.completedDate === today){
+            count++;
+        }
+    });
+    return count;
+}
+
+function getPomodorosToday(){
+    const today = getToday();
+    const data = JSON.parse(localStorage.getItem('pomodoroLog') || '{}');
+    return data[today] || 0;
+}
+
+
+
 let quoteIndex = 0;
 const quoteEl = document.getElementById('quote');
 const nextQuoteBtn = document.getElementById('next-quote');
@@ -37,18 +57,16 @@ showQuote();
 const goalInput = document.getElementById("goalInput");
 const goalStatus = document.getElementById("goalStatus");
 const saveGoalBtn = document.getElementById("saveGoalBtn");
+
 function loadDailyGoal() {
-    const data = JSON.parse(localStorage.getItem("daily-goal"));
+    let data = JSON.parse(localStorage.getItem("daily-goal"));
     if(!data || data.date !== todayKey()){
-        localStorage.setItem(
-            "dailyGoal",
-            JSON.stringify({
-                date: todayKey(),
-                text: "",
-                completed: false  
-            })
-        );
-        return;
+        data = {
+            date: todayKey(),
+            text: "",
+            completed: false
+        };
+        localStorage.setItem("dailyGoal" , JSON.stringify(data));
     }
     goalInput.value = data.text;
     updateGoalStatus(data.completed ? "completed" : "pending");
@@ -58,6 +76,22 @@ saveGoalBtn.addEventListener("click", () => {
     data.text = goalInput.value.trim();
     localStorage.setItem("dailyGoal", JSON.stringify(data));
 });
+function updateGoalStatus(status){
+    if(status === "completed"){
+        goalStatus.textContent ="✅ Completed";
+        goalStatus.style.color = "#4ade80";
+    } else {
+        goalStatus.textContent ="⏳ Pending";
+        goalStatus.style.color = "#fff";
+    }
+}
+
+function tryCompleteDailyGoal(){
+    const data = JSON.parse(localStorage.getItem("dailyGoal"));
+    if(data.completed) return;
+    const todosDone = getCompletedTodosToday();
+    const pomodorosDone = getPomodorosToday();
+}
 //todo
 document.getElementById('scroll-to-todos')
 .addEventListener('click', () => {
@@ -102,6 +136,13 @@ function updateTimer(){
     if(minutes===0 && seconds===0){
         clearInterval(timer);
         alert('Time is up! Take a break.');
+
+        const today = getToday();
+        const data = JSON.parse(localStorage.getItem('pomodoroLog') || '{}')
+        data[today] = (data[today] || 0) + 1;
+        localStorage.setItem('pomodorolog', JSON.stringify(data));
+
+        tryCompleteDailyGoal();
     } else if (!isPaused){
         if(seconds>0){
             seconds--;
