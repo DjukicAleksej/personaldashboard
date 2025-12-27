@@ -160,8 +160,9 @@ header h1{
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 80px 24px ;
+    align-items: flex-start;
+    padding-top: 200px;
+    padding-bottom: 80px;
   
 }
 .todo-glass {
