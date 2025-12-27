@@ -106,6 +106,12 @@ function restartTimer(){
     minutes = enteredTime || 15;
     seconds = 0;
     isPaused = false;
+    const timerElement =
+    document.getElementById('timer');
+    const pauseResumeButton =
+    document.querySelector('.control-buttons button');
+    pauseResumeButton.textContent = 'Pause';
+    startTimer();
 }
 
 function loadTodos() {
