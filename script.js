@@ -179,6 +179,12 @@ function checkStreakValidity(){
     }
 }
 checkStreakValidity();
+function updateStreakUI(){
+    const el = document.getElementById('streak-number');
+    el.textContent = streak;
+    el.classList.add('pulse');
+    setTimeout(() => el.classList.remove('pulse'), 300);
+}
 
 function addTodo(text, done = false) {
     const li = document.createElement('li');
@@ -204,8 +210,8 @@ viewBox="0 0 16 16">
 </svg>
     `;
     doneBtn.onclick = (e) => {
-        const wasDone = li.classList.contains('done');
         e.stopPropagation();
+           const wasDone = li.classList.contains('done');
         li.classList.toggle('done');
 
         if(!wasDone && li.classList.contains('done')){
@@ -254,11 +260,6 @@ function updateStats() {
 
     document.getElementById('done-count').textContent = doneCount;
     document.getElementById('remaining-count').textContent = remainingCount;
-
-    const streak = parseInt(localStorage.getItem('streak') || '0');
-    if(doneCount === todos.length && todos.length > 0){
-        localStorage.setItem('streak',streak+1);
-    }
     document.getElementById('streak-count').textContent = localStorage.getItem('streak') || '0';
 }
 
