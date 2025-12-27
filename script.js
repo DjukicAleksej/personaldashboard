@@ -101,7 +101,12 @@ function togglePauseResume () {
         pauseResumeButton.textContent = 'Pause';
     }
 }
-
+function restartTimer(){
+    clearInterval(timer);
+    minutes = enteredTime || 15;
+    seconds = 0;
+    isPaused = false;
+}
 
 function loadTodos() {
     const saved = JSON.parse(localStorage.getItem('todos') || '[]');
